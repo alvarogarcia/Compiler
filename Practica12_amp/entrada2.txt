@@ -1,0 +1,21 @@
+void main(){
+int a;
+
+
+/*int[11][11] v;
+int[11][11] w;
+
+a = 1;
+v[4][10] = 100;
+w[3][10] = 200;
+*/
+struct{
+int b;
+} st;
+a = 1;
+st.b = 5;
+
+
+//write (a ? v[4] : w[3])[10] + 4;
+write (a ? st : st).b;
+}

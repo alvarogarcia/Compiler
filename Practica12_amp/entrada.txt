@@ -1,0 +1,106 @@
+
+// * Variables globales
+int i,n,j;
+char c;
+
+struct { 
+	int entero;
+	char caracter;
+} par;
+
+// * Funciones
+void p() {}
+
+int f(double r, int e) {
+	double real;
+	char c;
+	real = par.caracter+par.entero+r+e;
+	c='0';
+	return (int)c;
+}
+
+int[10][10] matriz;
+
+void rellenar(int fila, int valor, int incremento) {
+	int i,inc;
+	i=0;
+	inc=incremento;
+	while (i<10) {
+		matriz[fila][i]=valor+inc; 
+		i=i+1;
+		inc=inc+incremento;
+	}
+}
+
+void mostrar(int fila) {
+	int i;
+	i=0;
+	while (i<10) {
+		write '(', fila, ',', i, ')', ':', matriz[fila][i], ' ';
+		i=i+1;
+	}
+	write '\n';
+}
+
+
+void TestExamen() {	
+	int[10][10] matriz;
+	int i,j;
+	write 'E','X','A','M','E','N','\n';	
+	i=0;
+	j=0;	
+	while (i<10)
+	{
+		while (j<10)
+		{
+			matriz[i][j]=i*j;
+			j=j+1;
+		}		
+		j=0;	
+		i=i+1;
+	}
+	i=0;	
+	j=0;
+	while (i<10)
+	{
+		while (j<10)
+		{
+			write (matriz[i][j]%2?'P':'I');
+			j=j+1;
+		}
+		write '\n';
+		j=0;	
+		i=i+1;
+	}
+	
+	i = -'a';
+	i = (0?1:'a');
+}
+
+// * Programa principal
+void main() {
+	int i;
+
+	p(); // * Invocacion a procedimiento
+	i=0;
+	par.caracter='0';
+	par.entero=(int)'0';
+	write f((double)i,(int)(par.caracter)), '\n';
+
+	f(1.3,2); // * Inv. a función como sentencia
+
+	i=0;
+	j=0;
+	while (i<10) {
+		rellenar(i,j,1); 
+		mostrar(i);
+		i=i+1;
+		j=i*10;
+	}
+		
+	//Examen		
+	TestExamen();	
+}
+
+
+

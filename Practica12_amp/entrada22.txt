@@ -1,0 +1,64 @@
+
+// * Variables globales
+int contador;
+struct{
+	int entero;
+	double[5] reales;
+	char[7][2] matrizChar;
+} tripleta;
+
+// * Funciones
+void incrementar(){
+	contador=contador+1;
+}
+
+double maxReal(){
+	double maximo;
+	int i;
+	maximo=0;
+	i=0;
+	while(i<5){
+		if(tripleta.reales[i]>maximo)
+			maximo=tripleta.reales[i];
+		i=i+1;
+	}
+	return maximo;
+}
+
+void rellenarReales(){
+	contador=0;
+	while(contador<((5*2+2)/2-1)){
+		tripleta.reales[contador]=2.21+(contador/3);
+		incrementar();
+	}
+}
+
+// * MAIN
+void main() {
+	double max;
+	int i;
+	
+	rellenarReales();
+	max=maxReal();
+	i=0;
+	while(i<5){
+		write tripleta.reales[i];
+		if(tripleta.reales[i]==max)
+			write 'M','A','X';
+		write '\n';
+		i=i+1;
+	}
+	
+	contador=0;
+	while(contador<7){
+		tripleta.matrizChar[contador][0]=(char)contador;
+		tripleta.matrizChar[contador][1]=(char)(contador*2);
+		incrementar();
+	}
+	
+	contador=0;
+	while(contador<7){
+		write tripleta.matrizChar[contador][0], ' ', tripleta.matrizChar[contador][1], '\n';
+		incrementar();
+	}
+}	

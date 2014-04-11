@@ -1,0 +1,45 @@
+double[10] v;
+
+// * Programa principal
+void main() {
+	double valor;
+	int i,j;
+	int[4][5] w;
+	struct { 
+		int dia;
+		int mes, anio;
+	} unaFecha;
+	
+	read unaFecha.dia; // * lvalue
+	unaFecha.anio=(int)'a'; 
+	unaFecha.mes=unaFecha.dia*unaFecha.anio%12+1;
+	write unaFecha.dia, '\n', unaFecha.mes, '\n', (double)(unaFecha.anio), '\n';
+	
+	read valor;
+		
+	i=0;	
+	while (i<10) {
+		v[i]=valor; // * lvalue
+		write i,':',v[i], ' ';
+		if (i%2)
+			write 'i','m','p','a','r','\n';
+		else 
+			write 'p','a','r','\n';
+		i=i+1;
+	}
+	write '\n';
+
+	i=0;
+	while (i<4) {
+		j=0;
+		while (j<5) {
+			w[i][j]=i+j;
+			write w[i][j], ' ';
+			j=j+1;
+		}
+		write '\n';
+		i=i+1;
+	}
+
+}
+	

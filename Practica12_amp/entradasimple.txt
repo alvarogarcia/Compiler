@@ -1,0 +1,7 @@
+int p() { return 0;}
+
+void main() {
+
+p(); 
+
+}
